@@ -1,0 +1,16 @@
+This little hack adapts fabricate.py to generic 'cache'.
+
+See http://code.google.com/p/fabricate/ for more details about original fabricate.py.
+
+Invoke something that takes time and is deterministic in files that it reads like this:
+
+fabricate.py ./autogen.sh
+
+This tool tracks dependencies of command and caches it's output
+files. If dependencies are same it just copies outputs from cache
+without running command.
+
+Very handy for those long and non-parallelizable autotools runs!
+
+The code is quite quick & dirty. Largely because my interest for doing
+anything in Python is zero. Feel free to fork and improve.
